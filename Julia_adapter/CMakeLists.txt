@@ -3,7 +3,7 @@ project(JULIA C)
 set(JULIA_VERSION 1.0.0)
 set(JULIA_LIB_OUT kblas)
 
-set(CMAKE_SHARED_LINKER_FLAGS "-lkblas -lklapack_full -L/usr/local/kml/lib/kblas/pthread -Wl,-rpath,/usr/local/kml/lib/kblas/pthread -L${LAPACK_FULL_DIRECTORY} -Wl,-rpath,${LAPACK_FULL_DIRECTORY}")
+set(CMAKE_SHARED_LINKER_FLAGS "-lkblas -lklapack_full -L/usr/local/kml/lib/kblas/pthread -Wl,-rpath,/usr/local/kml/lib/kblas/pthread -L${LAPACK_FULL_DIRECTORY} -Wl,-rpath,${LAPACK_FULL_DIRECTORY} -fopenmp")
 
 if(CMAKE_C_COMPILER_ID STREQUAL "GNU")
     if(CMAKE_C_COMPILER_VERION VERSION_LESS "4.8.5" OR CMAKE_C_COMPILER_VERION VERSION_EQUAL "4.8.5")
